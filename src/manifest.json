@@ -1,0 +1,29 @@
+{
+  "name": "ThePirateUI",
+  "short_name": "TPB UI",
+  "description": "Improved user interface of The Pirate Bay.",
+  "version": "0.0.1",
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "manifest_version": 2,
+  "content_scripts": [{
+    "exclude_globs": [],
+    "include_globs": [
+      "*"
+    ],
+    "js":[
+      "jquery-1.11.0.min.js",
+      "js.js"
+    ],
+    "matches": [
+      "http://thepiratebay.org/top/all",
+      "http://thepiratebay.se/top/all",
+      "http://thepiratebay.sx/top/all"
+    ],
+    "run_at": "document_end"
+  }],
+  "web_accessible_resources": ["jquery-1.11.0.min.map"]
+}
