@@ -1,3 +1,5 @@
+var $ = require('jquery/dist/jquery.min');
+
 $('td:nth-child(3)').each(function() {
   var torrent = $(this).parent();
   var day = $(this).text().match(/^(.+)\s/)[1];

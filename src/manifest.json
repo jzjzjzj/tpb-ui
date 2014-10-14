@@ -15,7 +15,6 @@
       "*"
     ],
     "js": [
-      "jquery.min.js",
       "js.js"
     ],
     "matches": [
