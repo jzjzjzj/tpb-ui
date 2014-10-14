@@ -3,7 +3,7 @@
   "name": "tpb-ui",
   "version": "0.0.0",
   "dependencies": {
-    "jquery": "1.11.0"
+    "jquery": "^2.1.1"
   },
   "scripts": {
     "clean-chrome": "rm -rf dist-chrome",
