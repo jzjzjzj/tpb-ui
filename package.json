@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "dependencies": {
     "jquery": "^2.1.1",
-    "browserify": "^6.0.3"
+    "browserify": "^6.0.3",
+    "uglify-js": "^2.4.15"
   },
   "scripts": {
     "clean-chrome": "rm -rf dist-chrome",
     "clean": "npm run clean-chrome",
     "copy-chrome": "rsync -a --exclude='*.js' src/ dist-chrome/",
-    "js-chrome": "browserify src/js.js > dist-chrome/js.js",
+    "js-chrome": "browserify src/js.js | uglifyjs > dist-chrome/js.js",
     "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run js-chrome",
     "build": "npm run build-chrome",
     "install": "npm run build"
