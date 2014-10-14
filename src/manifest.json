@@ -15,8 +15,7 @@
     ],
     "matches": [
       "http://thepiratebay.se/top/all"
-    ],
-    "run_at": "document_end"
+    ]
   }],
   "web_accessible_resources": ["jquery.min.map"]
 }
