@@ -14,7 +14,7 @@
     "include_globs": [
       "*"
     ],
-    "js":[
+    "js": [
       "jquery-1.11.0.min.js",
       "js.js"
     ],
