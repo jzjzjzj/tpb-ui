@@ -9,7 +9,7 @@
     "clean-chrome": "rm -rf dist-chrome",
     "clean": "npm run clean-chrome",
     "copy-chrome": "rsync -a src/ dist-chrome/",
-    "jquery-chrome": "find node_modules/jquery/dist/cdn/* -name '*1.11.0.min*' | xargs cp -t dist-chrome",
+    "jquery-chrome": "find node_modules/jquery/dist/* -name '*min*' | xargs cp -t dist-chrome",
     "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run jquery-chrome",
     "build": "npm run build-chrome",
     "install": "npm run build"

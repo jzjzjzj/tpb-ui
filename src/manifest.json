@@ -15,7 +15,7 @@
       "*"
     ],
     "js": [
-      "jquery-1.11.0.min.js",
+      "jquery.min.js",
       "js.js"
     ],
     "matches": [
@@ -25,5 +25,5 @@
     ],
     "run_at": "document_end"
   }],
-  "web_accessible_resources": ["jquery-1.11.0.min.map"]
+  "web_accessible_resources": ["jquery.min.map"]
 }
