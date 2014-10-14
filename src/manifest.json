@@ -18,9 +18,7 @@
       "js.js"
     ],
     "matches": [
-      "http://thepiratebay.org/top/all",
-      "http://thepiratebay.se/top/all",
-      "http://thepiratebay.sx/top/all"
+      "http://thepiratebay.se/top/all"
     ],
     "run_at": "document_end"
   }],
