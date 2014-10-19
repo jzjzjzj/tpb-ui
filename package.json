@@ -10,7 +10,7 @@
   "scripts": {
     "clean-chrome": "rm -rf dist-chrome",
     "clean": "npm run clean-chrome",
-    "copy-chrome": "rsync -a --exclude='*.js' src/ dist-chrome/",
+    "copy-chrome": "mkdir dist-chrome && cp -rf src/* dist-chrome",
     "js-chrome": "browserify src/js.js | uglifyjs > dist-chrome/js.js",
     "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run js-chrome",
     "build": "npm run build-chrome",
