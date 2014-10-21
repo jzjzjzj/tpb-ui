@@ -1,6 +1,7 @@
 'use strict';
 
 require('angular/angular.min');
+var ptn = require('parse-torrent-name');
 
 var app = angular.module('tpb-ui', []);
 
@@ -54,10 +55,10 @@ app.factory('torrents', function() {
   ];
   var rowPattern = new RegExp(cellPatterns.join(''), 'g');
   var torrents = [];
-  var cells;
+  var cells, torrent, parts, key;
 
   while(cells = rowPattern.exec(document.body.innerHTML)) {
-    torrents.push({
+    torrent = {
       type: cells[1],
       name: cells[2],
       uploaded: cells[3],
@@ -65,7 +66,17 @@ app.factory('torrents', function() {
       size: cells[5],
       seeders: cells[6],
       leechers: cells[7]
-    });
+    };
+
+    parts = ptn(torrent.name.match(/>([^<]+)</)[1]);
+
+    for(key in parts) {
+      torrent[key] = parts[key];
+    }
+
+    torrent.title = torrent.name.replace(/>[^<]+</, '>' + torrent.title + '<');
+
+    torrents.push(torrent);
   }
 
   return torrents;

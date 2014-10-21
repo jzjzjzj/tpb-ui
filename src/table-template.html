@@ -2,6 +2,15 @@
   <thead id="tableHead">
     <tr class="header">
       <th ng-show="columns.type">Type</th>
+      <th ng-show="columns.title">Title</th>
+      <th ng-show="columns.year">Year</th>
+      <th ng-show="columns.quality">Quality</th>
+      <th ng-show="columns.season">S</th>
+      <th ng-show="columns.episode">E</th>
+      <th ng-show="columns.resolution">Res</th>
+      <th ng-show="columns.codec">Codec</th>
+      <th ng-show="columns.group">Group</th>
+      <th ng-show="columns.excess">Excess</th>
       <th ng-show="columns.name">
         <div class="sortby">Name</div><div class="viewswitch"> View: Single / <a href="/switchview.php?view=d">Double</a>&nbsp;</div>
       </th>
@@ -14,7 +23,16 @@
   </thead>
   <tbody>
     <tr highlight-recent="t.uploaded" ng-repeat="t in torrents">
-      <td ng-show="columns.type" class="vertTh" ng-bind-html="t.type | trusted"></td>
+      <td ng-show="columns.type" class="vertTh smaller" ng-bind-html="t.type | trusted"></td>
+      <td ng-show="columns.title" ng-bind-html="t.title | trusted"></td>
+      <td ng-show="columns.year">{{t.year}}</td>
+      <td ng-show="columns.quality"><nobr>{{t.quality}}</nobr></td>
+      <td ng-show="columns.season">{{t.season}}</td>
+      <td ng-show="columns.episode">{{t.episode}}</td>
+      <td ng-show="columns.resolution">{{t.resolution}}</td>
+      <td ng-show="columns.codec">{{t.codec}}</td>
+      <td ng-show="columns.group" class="smaller">{{t.group}}</td>
+      <td ng-show="columns.excess" class="smaller">{{t.excess}}</td>
       <td ng-show="columns.name" ng-bind-html="t.name | trusted"></td>
       <td ng-show="columns.uploaded" ng-bind-html="t.uploaded | trusted"></td>
       <td ng-show="columns.icons" ng-bind-html="t.icons | trusted"></td>
