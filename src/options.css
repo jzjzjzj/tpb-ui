@@ -1,0 +1,13 @@
+* {
+  font-size: 1.3em;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+  -webkit-user-select: none;
+}
+
+label:hover {
+  background-color: lightgray;
+}

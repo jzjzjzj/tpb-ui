@@ -19,6 +19,24 @@ app.run(['torrents', '$rootElement', '$http', 'tableTemplateUrl', function(torre
 
 app.controller('TableController', ['$scope', 'torrents', function($scope, torrents) {
   $scope.torrents = torrents;
+
+  // load initial column settings
+  chrome.storage.local.get(null, function(items) {
+    $scope.$apply(function() {
+      $scope.columns = items;
+    });
+  });
+
+  // live update of columns
+  chrome.storage.onChanged.addListener(function(changes) {
+    $scope.$apply(function() {
+      var key;
+
+      for(key in changes) {
+        $scope.columns[key] = changes[key].newValue;
+      }
+    });
+  });
 }]);
 
 /**

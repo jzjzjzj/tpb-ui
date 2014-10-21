@@ -1,26 +1,26 @@
 <table border=1 id="searchResult" ng-controller="TableController">
   <thead id="tableHead">
     <tr class="header">
-      <th>Type</th>
-      <th>
+      <th ng-show="columns.type">Type</th>
+      <th ng-show="columns.name">
         <div class="sortby">Name</div><div class="viewswitch"> View: Single / <a href="/switchview.php?view=d">Double</a>&nbsp;</div>
       </th>
-      <th>Uploaded</th>
-      <th>&nbsp;</th>
-      <th>Size</th>
-      <th><abbr title="Seeders">SE</abbr></th>
-      <th><abbr title="Leechers">LE</abbr></th>
+      <th ng-show="columns.uploaded">Uploaded</th>
+      <th ng-show="columns.icons">&nbsp;</th>
+      <th ng-show="columns.size">Size</th>
+      <th ng-show="columns.seeders"><abbr title="Seeders">SE</abbr></th>
+      <th ng-show="columns.leechers"><abbr title="Leechers">LE</abbr></th>
     </tr>
   </thead>
   <tbody>
     <tr highlight-recent="t.uploaded" ng-repeat="t in torrents">
-      <td class="vertTh" ng-bind-html="t.type | trusted"></td>
-      <td ng-bind-html="t.name | trusted"></td>
-      <td ng-bind-html="t.uploaded | trusted"></td>
-      <td ng-bind-html="t.icons | trusted"></td>
-      <td align="right" ng-bind-html="t.size | trusted"></td>
-      <td align="right" ng-bind-html="t.seeders | trusted"></td>
-      <td align="right" ng-bind-html="t.leechers | trusted"></td>
+      <td ng-show="columns.type" class="vertTh" ng-bind-html="t.type | trusted"></td>
+      <td ng-show="columns.name" ng-bind-html="t.name | trusted"></td>
+      <td ng-show="columns.uploaded" ng-bind-html="t.uploaded | trusted"></td>
+      <td ng-show="columns.icons" ng-bind-html="t.icons | trusted"></td>
+      <td ng-show="columns.size" align="right" ng-bind-html="t.size | trusted"></td>
+      <td ng-show="columns.seeders" align="right" ng-bind-html="t.seeders | trusted"></td>
+      <td ng-show="columns.leechers" align="right" ng-bind-html="t.leechers | trusted"></td>
     </tr>
   </tbody>
 </table>

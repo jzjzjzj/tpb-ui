@@ -8,6 +8,14 @@
     "48": "img/48.png",
     "128": "img/128.png"
   },
+  "options_page": "options.html",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "manifest_version": 2,
   "content_scripts": [{
     "js": [
