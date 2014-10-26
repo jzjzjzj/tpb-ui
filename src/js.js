@@ -1,12 +1,10 @@
-var $ = require('jquery/dist/jquery.min');
+'use strict';
 
-$('td:nth-child(3)').each(function() {
-  var torrent = $(this).parent();
-  var day = $(this).text().match(/^(.+)\s/)[1];
-  var colors = {
-    'Today': '#FFDD44',
-    'Y-day': '#FFEE99'
-  };
+require('angular/angular.min');
+require('./util');
+require('./tpb-ui');
 
-  torrent.css('background-color', colors[day]);
-});
+angular.bootstrap(
+  angular.element('<search-result/>'),
+  ['tpb-ui', 'util']
+);
