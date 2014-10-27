@@ -12,8 +12,11 @@
     "clean": "npm run clean-chrome",
     "copy-chrome": "mkdir dist-chrome && cp -rf src/* dist-chrome",
     "js-chrome": "browserify src/js.js | uglifyjs > dist-chrome/js.js",
+    "bg-chrome": "uglifyjs src/background.js > dist-chrome/background.js",
+    "opt-chrome": "uglifyjs src/options.js > dist-chrome/options.js",
+    "browserify-chrome": "npm run js-chrome && npm run bg-chrome && npm run opt-chrome",
     "rm-js-chrome": "rm dist-chrome/util.js dist-chrome/tpb-ui.js",
-    "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run js-chrome && npm run rm-js-chrome",
+    "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run browserify-chrome && npm run rm-js-chrome",
     "build": "npm run build-chrome",
     "install": "npm run build"
   }

@@ -22,6 +22,24 @@ app.controller('TableController', ['$scope', '$element', 'torrents', function($s
   $scope.torrents = torrents;
   // show new <table> (replacement)
   $element.css('visibility', 'visible');
+
+  // load initial column settings
+  chrome.storage.local.get(null, function(items) {
+    $scope.$apply(function() {
+      $scope.columns = items;
+    });
+  });
+
+  // live update of columns
+  chrome.storage.onChanged.addListener(function(changes) {
+    $scope.$apply(function() {
+      var key;
+
+      for(key in changes) {
+        $scope.columns[key] = changes[key].newValue;
+      }
+    });
+  });
 }]);
 
 /**
