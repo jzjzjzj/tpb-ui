@@ -36,10 +36,10 @@ app.factory('torrents', function() {
   ];
   var rowPattern = new RegExp(cellPatterns.join(''), 'g');
   var torrents = [];
-  var cells;
+  var cells, torrent;
 
   while(cells = rowPattern.exec(document.body.innerHTML)) {
-    torrents.push({
+    torrent = {
       type: cells[1],
       name: cells[2],
       uploaded: cells[3],
@@ -47,31 +47,14 @@ app.factory('torrents', function() {
       size: cells[5],
       seeders: cells[6],
       leechers: cells[7]
-    });
+    };
+
+    torrent.recent = torrent.uploaded.toLowerCase().match(/^\D{5}/);
+
+    torrents.push(torrent);
   }
 
   return torrents;
-});
-
-/**
- * Highlights recently (today, yesterday) added torrents.
- */
-app.directive('highlightRecent', function() {
-  return {
-    restrict: 'A',
-    scope: {
-      uploaded: '=highlightRecent'
-    },
-    link: function(scope, element, attrs) {
-      var day = scope.uploaded.substring(0, 5);
-      var colors = {
-        'Today': '#FFDD44',
-        'Y-day': '#FFEE99'
-      };
-
-      element.css('background-color', colors[day]);
-    }
-  };
 });
 
 /**

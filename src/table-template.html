@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr highlight-recent="t.uploaded" ng-repeat="t in torrents">
+    <tr ng-class="t.recent" ng-repeat="t in torrents">
       <td class="vertTh" ng-bind-html="t.type | trusted"></td>
       <td ng-bind-html="t.name | trusted"></td>
       <td ng-bind-html="t.uploaded | trusted"></td>
