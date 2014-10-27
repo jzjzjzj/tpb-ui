@@ -5,3 +5,7 @@
 .y-day {
   background-color: #FFEE99 !important;
 }
+
+#searchResult {
+  visibility: hidden;
+}

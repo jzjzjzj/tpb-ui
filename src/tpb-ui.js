@@ -13,12 +13,15 @@ app.constant('tableTemplateUrl', chrome.extension.getURL('table-template.html'))
 app.run(['torrents', '$rootElement', '$http', 'tableTemplateUrl', function(torrents, $rootElement, $http, tableTemplateUrl) {
   // $http request fixes new table not showing up after browser restart (extension restart needed)
   $http.get(tableTemplateUrl).then(function(result) {
+    // replace hidden original <table> with $rootElement
     angular.element(document.getElementById('searchResult')).replaceWith($rootElement);
   });
 }]);
 
-app.controller('TableController', ['$scope', 'torrents', function($scope, torrents) {
+app.controller('TableController', ['$scope', '$element', 'torrents', function($scope, $element, torrents) {
   $scope.torrents = torrents;
+  // show new <table> (replacement)
+  $element.css('visibility', 'visible');
 }]);
 
 /**
