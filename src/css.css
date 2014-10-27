@@ -12,3 +12,7 @@
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+.smaller {
+  font-size: .8em;
+}
