@@ -1,0 +1,26 @@
+<table border=1 id="searchResult" ng-controller="TableController">
+  <thead id="tableHead">
+    <tr class="header">
+      <th>Type</th>
+      <th>
+        <div class="sortby">Name</div><div class="viewswitch"> View: Single / <a href="/switchview.php?view=d">Double</a>&nbsp;</div>
+      </th>
+      <th>Uploaded</th>
+      <th>&nbsp;</th>
+      <th>Size</th>
+      <th><abbr title="Seeders">SE</abbr></th>
+      <th><abbr title="Leechers">LE</abbr></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="t.recent" ng-repeat="t in torrents">
+      <td class="vertTh" ng-bind-html="t.type | trusted"></td>
+      <td ng-bind-html="t.name | trusted"></td>
+      <td ng-bind-html="t.uploaded | trusted"></td>
+      <td ng-bind-html="t.icons | trusted"></td>
+      <td align="right" ng-bind-html="t.size | trusted"></td>
+      <td align="right" ng-bind-html="t.seeders | trusted"></td>
+      <td align="right" ng-bind-html="t.leechers | trusted"></td>
+    </tr>
+  </tbody>
+</table>

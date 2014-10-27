@@ -13,8 +13,14 @@
     "js": [
       "js.js"
     ],
+    "css": [
+      "css.css"
+    ],
     "matches": [
       "http://thepiratebay.se/top/all"
     ]
-  }]
+  }],
+  "web_accessible_resources": [
+    "table-template.html"
+  ]
 }
