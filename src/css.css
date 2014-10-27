@@ -1,0 +1,18 @@
+.today {
+  background-color: #FFDD44 !important;
+}
+
+.y-day {
+  background-color: #FFEE99 !important;
+}
+
+#searchResult {
+  visibility: hidden;
+  width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.smaller {
+  font-size: .8em;
+}

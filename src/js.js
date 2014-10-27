@@ -1,12 +1,16 @@
-var $ = require('jquery/dist/jquery.min');
+'use strict';
 
-$('td:nth-child(3)').each(function() {
-  var torrent = $(this).parent();
-  var day = $(this).text().match(/^(.+)\s/)[1];
-  var colors = {
-    'Today': '#FFDD44',
-    'Y-day': '#FFEE99'
-  };
+// do not touch "double" view
+if(document.cookie.indexOf('lw=d') !== -1) {
+  document.getElementById('searchResult').style.visibility = 'visible';
+  return;
+}
 
-  torrent.css('background-color', colors[day]);
-});
+require('angular/angular.min');
+require('./util');
+require('./tpb-ui');
+
+angular.bootstrap(
+  angular.element('<search-result/>'),
+  ['tpb-ui', 'util']
+);
