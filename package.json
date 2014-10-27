@@ -12,7 +12,8 @@
     "clean": "npm run clean-chrome",
     "copy-chrome": "mkdir dist-chrome && cp -rf src/* dist-chrome",
     "js-chrome": "browserify src/js.js | uglifyjs > dist-chrome/js.js",
-    "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run js-chrome",
+    "rm-js-chrome": "rm dist-chrome/util.js dist-chrome/tpb-ui.js",
+    "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run js-chrome && npm run rm-js-chrome",
     "build": "npm run build-chrome",
     "install": "npm run build"
   }
