@@ -3,6 +3,9 @@
     <tr class="header">
       <th ng-show="columns.type">Type</th>
       <th ng-show="columns.group">Group</th>
+      <th ng-show="columns.region">Reg</th>
+      <th ng-show="columns.extended">Ext</th>
+      <th ng-show="columns.hardcoded">HC</th>
       <th ng-show="columns.codec">Codec</th>
       <th ng-show="columns.quality">Quality</th>
       <th ng-show="columns.resolution">Res</th>
@@ -25,6 +28,9 @@
     <tr ng-class="t.recent" ng-repeat="t in torrents">
       <td ng-show="columns.type" class="vertTh smaller" ng-bind-html="t.type | trusted"></td>
       <td ng-show="columns.group" class="smaller">{{t.group}}</td>
+      <td ng-show="columns.region">{{t.region}}</td>
+      <td ng-show="columns.extended">{{ {true: '✓'}[t.extended] }}</td>
+      <td ng-show="columns.hardcoded">{{ {true: '✓'}[t.hardcoded] }}</td>
       <td ng-show="columns.codec">{{t.codec}}</td>
       <td ng-show="columns.quality"><nobr>{{t.quality}}</nobr></td>
       <td ng-show="columns.resolution">{{t.resolution}}</td>

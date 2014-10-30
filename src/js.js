@@ -1,7 +1,7 @@
 'use strict';
 
 // do not touch "double" view
-if(document.cookie.indexOf('lw=d') !== -1) {
+if(document.cookie.indexOf('lw=s') === -1) {
   document.getElementById('searchResult').style.visibility = 'visible';
   return;
 }

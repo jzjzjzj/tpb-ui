@@ -1,8 +1,8 @@
 {
   "name": "TPB UI - The Pirate Bay Special",
   "short_name": "TPB UI",
-  "description": "Improved user interface of The Pirate Bay.",
-  "version": "1.0.1",
+  "description": "Improved user interface of ThePirateBay (tpb).",
+  "version": "1.1.0",
   "icons": {
     "16": "img/16.png",
     "48": "img/48.png",
