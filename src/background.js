@@ -14,7 +14,10 @@ var columns = {
   icons: true,
   size: true,
   seeders: true,
-  leechers: true
+  leechers: true,
+  region: false,
+  extended: false,
+  hardcoded: false
 };
 
 // store config of default columns
