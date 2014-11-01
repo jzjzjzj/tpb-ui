@@ -14,13 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // save the new state of a column
-  for(i = 0; i < elms.length; i ++){
-    elms[i].addEventListener('click', function(event) {
-      var items = {};
+  var save = function(event) {
+    var items = {};
 
-      items[event.target.id] = event.target.checked;
-      chrome.storage.local.set(items);
-    });
+    items[event.target.id] = event.target.checked;
+    chrome.storage.local.set(items);
+  };
+
+  for(i = 0; i < elms.length; i ++){
+    elms[i].addEventListener('click', save);
   }
 });
 
