@@ -17,7 +17,9 @@ var columns = {
   leechers: true,
   region: false,
   extended: false,
-  hardcoded: false
+  hardcoded: false,
+  proper: false,
+  repack: false
 };
 
 // store config of default columns
