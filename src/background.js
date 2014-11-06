@@ -19,7 +19,9 @@ var columns = {
   extended: false,
   hardcoded: false,
   proper: false,
-  repack: false
+  repack: false,
+  audio: true,
+  garbage: false
 };
 
 // store config of default columns
