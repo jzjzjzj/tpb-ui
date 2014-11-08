@@ -60,17 +60,18 @@ app.factory('torrents', function() {
   ];
   var rowPattern = new RegExp(cellPatterns.join(''), 'g');
   var torrents = [];
-  var cells, torrent, parts, key;
+  var cells = document.querySelectorAll('td');
+  var torrent, parts, key;
 
-  while(cells = rowPattern.exec(document.body.innerHTML)) {
+  for(var i = 0; i < cells.length; i += 7) {
     torrent = {
-      type: cells[1],
-      name: cells[2],
-      uploaded: cells[3],
-      icons: cells[4],
-      size: cells[5],
-      seeders: cells[6],
-      leechers: cells[7]
+      type: cells[i].innerHTML,
+      name: cells[i + 1].innerHTML,
+      uploaded: cells[i + 2].innerHTML,
+      icons: cells[i + 3].innerHTML,
+      size: cells[i + 4].innerHTML,
+      seeders: cells[i + 5].innerHTML,
+      leechers: cells[i + 6].innerHTML
     };
 
     torrent.recent = torrent.uploaded.toLowerCase().match(/^\D{5}/);
