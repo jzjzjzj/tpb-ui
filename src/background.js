@@ -21,7 +21,10 @@ var columns = {
   proper: false,
   repack: false,
   audio: true,
-  garbage: false
+  garbage: false,
+  container: false,
+  episodeName: false,
+  widescreen: false
 };
 
 // store config of default columns
