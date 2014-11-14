@@ -13,7 +13,7 @@ app.constant('tableTemplateUrl', chrome.extension.getURL('table-template.html'))
  */
 app.run(['torrents', '$rootElement', '$http', 'tableTemplateUrl', function(torrents, $rootElement, $http, tableTemplateUrl) {
   // $http request fixes new table not showing up after browser restart (extension restart needed)
-  $http.get(tableTemplateUrl).then(function(result) {
+  $http.get(tableTemplateUrl).then(function() {
     // replace hidden original <table> with $rootElement
     angular.element(document.getElementById('searchResult')).replaceWith($rootElement);
   });
@@ -37,7 +37,9 @@ app.controller('TableController', ['$scope', '$element', 'torrents', function($s
       var key;
 
       for(key in changes) {
-        $scope.columns[key] = changes[key].newValue;
+        if(changes.hasOwnProperty(key)) {
+          $scope.columns[key] = changes[key].newValue;
+        }
       }
     });
   });
@@ -76,7 +78,9 @@ app.factory('torrents', function() {
     parts = ptn(torrent.name.match(/>([^<]+)</)[1]);
 
     for(key in parts) {
-      torrent[key] = parts[key];
+      if(parts.hasOwnProperty(key)) {
+        torrent[key] = parts[key];
+      }
     }
 
     torrent.title = torrent.name.replace(/>[^<]+</, '>' + torrent.title + '<');

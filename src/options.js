@@ -9,9 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var key, checkbox;
 
     for(key in items) {
-      checkbox = document.getElementById(key);
+      if(items.hasOwnProperty(key)) {
+        checkbox = document.getElementById(key);
 
-      if(checkbox) checkbox.checked = items[key];
+        if(checkbox) {
+          checkbox.checked = items[key];
+        }
+      }
     }
   });
 
