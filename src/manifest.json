@@ -25,7 +25,13 @@
       "css.css"
     ],
     "matches": [
-      "http://thepiratebay.se/top/all"
+      "http://thepiratebay.se/top/all",
+      "http://thepiratebay.se/top/200",
+      "http://thepiratebay.se/top/48h200",
+      "http://thepiratebay.se/top/201",
+      "http://thepiratebay.se/top/205",
+      "http://thepiratebay.se/top/207",
+      "http://thepiratebay.se/top/208"
     ]
   }],
   "web_accessible_resources": [
