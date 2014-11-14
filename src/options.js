@@ -1,3 +1,5 @@
+'use strict';
+
 // load initial state of columns
 document.addEventListener('DOMContentLoaded', function() {
   var elms = document.getElementsByTagName('input');
