@@ -23,5 +23,7 @@ var boot = function() {
   );
 };
 
-libs();
-boot();
+module.exports = {
+  libs: libs,
+  boot: boot
+};

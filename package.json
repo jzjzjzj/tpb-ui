@@ -12,7 +12,7 @@
     "clean-chrome": "rm -rf dist-chrome",
     "clean": "npm run clean-chrome",
     "copy-chrome": "mkdir dist-chrome && cp -rf src/* dist-chrome",
-    "js-chrome": "browserify src/app.js | uglifyjs > dist-chrome/app.js",
+    "js-chrome": "browserify -r ./src/app.js:app | uglifyjs > dist-chrome/app.js",
     "bg-chrome": "uglifyjs src/background.js > dist-chrome/background.js",
     "opt-chrome": "uglifyjs src/options.js > dist-chrome/options.js",
     "browserify-chrome": "npm run js-chrome && npm run bg-chrome && npm run opt-chrome",
