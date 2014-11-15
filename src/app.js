@@ -9,7 +9,7 @@ var libs = function () {
   }
 
   require('angular/angular.min');
-  require('./util');
+  require('./gear');
   require('./tpb-ui');
 };
 
@@ -21,8 +21,8 @@ var boot = function() {
   booted = true;
 
   angular.bootstrap(
-    angular.element('<search-result/>'),
-    ['tpb-ui', 'util']
+    angular.element('<app/>'),
+    ['search-result', 'gear']
   );
 };
 

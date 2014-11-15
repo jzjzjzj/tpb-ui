@@ -54,6 +54,9 @@
     }
   ],
   "web_accessible_resources": [
-    "table-template.html"
+    "app.html",
+    "table-template.html",
+    "options.html",
+    "img/gear.svg"
   ]
 }

@@ -1,49 +1,17 @@
 'use strict';
 
 require('angular/angular.min');
+require('./util');
+
 var ptn = require('parse-torrent-name');
 
-var app = angular.module('tpb-ui', []);
-
-app.constant('tableTemplateUrl', chrome.extension.getURL('table-template.html'));
+var app = angular.module('search-result', ['util']);
 
 /**
  * Runs "torrents" service before the original <table> is replaced.
  * Replaces the original <table>
  */
-app.run(['torrents', '$rootElement', '$http', 'tableTemplateUrl', function(torrents, $rootElement, $http, tableTemplateUrl) {
-  // $http request fixes new table not showing up after browser restart (extension restart needed)
-  $http.get(tableTemplateUrl).then(function() {
-    // replace hidden original <table> with $rootElement
-    angular.element(document.getElementById('searchResult')).replaceWith($rootElement);
-  });
-}]);
-
-app.controller('TableController', ['$scope', '$element', 'torrents', function($scope, $element, torrents) {
-  $scope.torrents = torrents;
-  // show new <table> (replacement)
-  $element.css('visibility', 'visible');
-
-  // load initial column settings
-  chrome.storage.local.get(null, function(items) {
-    $scope.$apply(function() {
-      $scope.columns = items;
-    });
-  });
-
-  // live update of columns
-  chrome.storage.onChanged.addListener(function(changes) {
-    $scope.$apply(function() {
-      var key;
-
-      for(key in changes) {
-        if(changes.hasOwnProperty(key)) {
-          $scope.columns[key] = changes[key].newValue;
-        }
-      }
-    });
-  });
-}]);
+app.run(['torrents', function(torrents) {}]);
 
 /**
  * Parses existing search result table. Provides an array of "torrents".
@@ -85,10 +53,55 @@ app.factory('torrents', function() {
 /**
  * Replaces <search-result> element with our table template.
  */
-app.directive('searchResult', ['$sce', 'tableTemplateUrl', function($sce, tableTemplateUrl) {
+app.directive('searchResult', ['$sce', '$http', function($sce, $http) {
+  var tableTemplateUrl = chrome.extension.getURL('table-template.html');
+
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: $sce.trustAsResourceUrl(tableTemplateUrl)
+    templateUrl: $sce.trustAsResourceUrl(tableTemplateUrl),
+    controller: function($scope, $element, torrents) {
+      $scope.torrents = torrents;
+      // show new <table> (replacement)
+      $element.css('visibility', 'visible');
+
+      // load initial column settings
+      chrome.storage.local.get(null, function(items) {
+        $scope.$apply(function() {
+          $scope.columns = items;
+        });
+      });
+
+      // live update of columns
+      chrome.storage.onChanged.addListener(function(changes) {
+        $scope.$apply(function() {
+          var key;
+
+          for(key in changes) {
+            if(changes.hasOwnProperty(key)) {
+              $scope.columns[key] = changes[key].newValue;
+            }
+          }
+        });
+      });
+    },
+    // TODO scope is not used
+    link: function(scope, element) {
+      // $http request fixes new table not showing up after browser restart (extension restart needed)
+      $http.get(tableTemplateUrl).then(function() {
+        // replace hidden original <table> with $rootElement
+        angular.element(document.getElementById('searchResult')).replaceWith(element);
+      });
+    }
+  };
+}]);
+
+app.directive('app', ['$sce', function($sce) {
+  return {
+    restrict: 'E',
+    templateUrl: $sce.trustAsResourceUrl(chrome.extension.getURL('app.html')),
+    link: function(scope, element) {
+      angular.element(document.body).append(element);
+    }
   };
 }]);
