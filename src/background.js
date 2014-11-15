@@ -1,3 +1,5 @@
+'use strict';
+
 var columns = {
   type: true,
   title: true,

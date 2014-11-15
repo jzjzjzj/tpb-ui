@@ -785,9 +785,9 @@
       }
     },
     "parse-torrent-name": {
-      "version": "0.5.0",
-      "from": "parse-torrent-name@0.5.0",
-      "resolved": "https://registry.npmjs.org/parse-torrent-name/-/parse-torrent-name-0.5.0.tgz"
+      "version": "0.5.1",
+      "from": "parse-torrent-name@0.5.1",
+      "resolved": "https://registry.npmjs.org/parse-torrent-name/-/parse-torrent-name-0.5.1.tgz"
     },
     "uglify-js": {
       "version": "2.4.15",

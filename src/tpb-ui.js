@@ -13,7 +13,7 @@ app.constant('tableTemplateUrl', chrome.extension.getURL('table-template.html'))
  */
 app.run(['torrents', '$rootElement', '$http', 'tableTemplateUrl', function(torrents, $rootElement, $http, tableTemplateUrl) {
   // $http request fixes new table not showing up after browser restart (extension restart needed)
-  $http.get(tableTemplateUrl).then(function(result) {
+  $http.get(tableTemplateUrl).then(function() {
     // replace hidden original <table> with $rootElement
     angular.element(document.getElementById('searchResult')).replaceWith($rootElement);
   });
@@ -37,7 +37,9 @@ app.controller('TableController', ['$scope', '$element', 'torrents', function($s
       var key;
 
       for(key in changes) {
-        $scope.columns[key] = changes[key].newValue;
+        if(changes.hasOwnProperty(key)) {
+          $scope.columns[key] = changes[key].newValue;
+        }
       }
     });
   });
@@ -58,17 +60,18 @@ app.factory('torrents', function() {
   ];
   var rowPattern = new RegExp(cellPatterns.join(''), 'g');
   var torrents = [];
-  var cells, torrent, parts, key;
+  var cells = document.querySelectorAll('td');
+  var torrent, parts, key;
 
-  while(cells = rowPattern.exec(document.body.innerHTML)) {
+  for(var i = 0; i < cells.length; i += 7) {
     torrent = {
-      type: cells[1],
-      name: cells[2],
-      uploaded: cells[3],
-      icons: cells[4],
-      size: cells[5],
-      seeders: cells[6],
-      leechers: cells[7]
+      type: cells[i].innerHTML,
+      name: cells[i + 1].innerHTML,
+      uploaded: cells[i + 2].innerHTML,
+      icons: cells[i + 3].innerHTML,
+      size: cells[i + 4].innerHTML,
+      seeders: cells[i + 5].innerHTML,
+      leechers: cells[i + 6].innerHTML
     };
 
     torrent.recent = torrent.uploaded.toLowerCase().match(/^\D{5}/);
@@ -76,7 +79,9 @@ app.factory('torrents', function() {
     parts = ptn(torrent.name.match(/>([^<]+)</)[1]);
 
     for(key in parts) {
-      torrent[key] = parts[key];
+      if(parts.hasOwnProperty(key)) {
+        torrent[key] = parts[key];
+      }
     }
 
     torrent.title = torrent.name.replace(/>[^<]+</, '>' + torrent.title + '<');
