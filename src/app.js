@@ -1,6 +1,7 @@
 'use strict';
 
 var singleView = document.cookie.indexOf('lw=s') !== -1;
+var booted = false;
 
 var libs = function () {
   if(!singleView) {
@@ -13,9 +14,11 @@ var libs = function () {
 };
 
 var boot = function() {
-  if(!singleView) {
+  if(!singleView || booted) {
     return;
   }
+
+  booted = true;
 
   angular.bootstrap(
     angular.element('<search-result/>'),
