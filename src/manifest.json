@@ -20,7 +20,7 @@
   "content_scripts": [
     {
       "js": [
-        "js.js"
+        "app.js"
       ],
       "css": [
         "css.css"
