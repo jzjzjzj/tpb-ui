@@ -9,6 +9,7 @@ angular.module('gear').directive('gear', ['$sce', function($sce) {
     link: function(scope, iElement) {
       iElement.css({
         'position': 'fixed',
+        'z-index': '99',
         'top': '8px',
         'right': '8px',
         'width': '32px',

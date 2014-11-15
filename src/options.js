@@ -30,5 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for(i = 0; i < elms.length; i ++){
     elms[i].addEventListener('click', save);
   }
+
+  document.getElementById('gear').addEventListener('click', window.close.bind(window));
 });
 

@@ -11,3 +11,18 @@ label {
 label:hover {
   background-color: lightgray;
 }
+
+#gear {
+  position: fixed;
+  z-index: 99;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background: url(img/gear.svg) 32px 0;
+}
+
+#gear:hover {
+  background-position: 0 0;
+}
