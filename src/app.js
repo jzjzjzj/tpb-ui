@@ -5,6 +5,7 @@ var booted = false;
 
 var libs = function () {
   if(!singleView) {
+    document.getElementById('searchResult').style.visibility = 'visible';
     return;
   }
 
