@@ -49,16 +49,6 @@ app.controller('TableController', ['$scope', '$element', 'torrents', function($s
  * Parses existing search result table. Provides an array of "torrents".
  */
 app.factory('torrents', function() {
-  var cellPatterns = [
-    '<td[^>]+>([^\n]+)<\/td>\n',
-    '<td>([^\n]+)\n<\/td>\n',
-    '<td>([^<]+)<\/td>\n',
-    '<td>([^\n]+)<\/td>\n',
-    '<td[^>]+>([^<]+)<\/td>\n',
-    '<td[^>]+>([0-9]+)<\/td>\n',
-    '<td[^>]+>([0-9]+)'
-  ];
-  var rowPattern = new RegExp(cellPatterns.join(''), 'g');
   var torrents = [];
   var cells = document.querySelectorAll('td');
   var torrent, parts, key;
