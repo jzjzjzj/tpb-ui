@@ -22,7 +22,8 @@ label:hover {
   cursor: pointer;
   background: url(img/gear.svg) 32px 0;
 }
-
+/*
 #gear:hover {
   background-position: 0 0;
 }
+*/

@@ -18,13 +18,13 @@ angular.module('gear').directive('gear', ['$sce', function($sce) {
         'background': 'url('+$sce.trustAsResourceUrl(chrome.extension.getURL('img/gear.svg'))+') 0 0'
       });
 
-      iElement.on('mouseover', function() {
-        iElement.css('background-position', '-32px 0');
-      });
+      // iElement.on('mouseover', function() {
+      //   iElement.css('background-position', '-32px 0');
+      // });
 
-      iElement.on('mouseout', function() {
-        iElement.css('background-position', '0 0');
-      });
+      // iElement.on('mouseout', function() {
+      //   iElement.css('background-position', '0 0');
+      // });
 
       iElement.on('click', function() {
         iElement.css('background-position', '0 0');
