@@ -2,7 +2,7 @@
   "name": "TPB UI - The Pirate Bay Special",
   "short_name": "TPB UI",
   "description": "Improved user interface of ThePirateBay (tpb).",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "icons": {
     "16": "img/16.png",
     "48": "img/48.png",
@@ -27,13 +27,13 @@
         "css.css"
       ],
       "matches": [
-        "http://thepiratebay.se/top/all",
-        "http://thepiratebay.se/top/200",
-        "http://thepiratebay.se/top/48h200",
-        "http://thepiratebay.se/top/201",
-        "http://thepiratebay.se/top/205",
-        "http://thepiratebay.se/top/207",
-        "http://thepiratebay.se/top/208"
+        "https://thepiratebay.se/top/all",
+        "https://thepiratebay.se/top/200",
+        "https://thepiratebay.se/top/48h200",
+        "https://thepiratebay.se/top/201",
+        "https://thepiratebay.se/top/205",
+        "https://thepiratebay.se/top/207",
+        "https://thepiratebay.se/top/208"
       ],
       "run_at": "document_start"
     },
@@ -43,13 +43,13 @@
         "idle.js"
       ],
       "matches": [
-        "http://thepiratebay.se/top/all",
-        "http://thepiratebay.se/top/200",
-        "http://thepiratebay.se/top/48h200",
-        "http://thepiratebay.se/top/201",
-        "http://thepiratebay.se/top/205",
-        "http://thepiratebay.se/top/207",
-        "http://thepiratebay.se/top/208"
+        "https://thepiratebay.se/top/all",
+        "https://thepiratebay.se/top/200",
+        "https://thepiratebay.se/top/48h200",
+        "https://thepiratebay.se/top/201",
+        "https://thepiratebay.se/top/205",
+        "https://thepiratebay.se/top/207",
+        "https://thepiratebay.se/top/208"
       ]
     }
   ],
