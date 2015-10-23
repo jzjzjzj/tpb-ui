@@ -117,6 +117,18 @@
         "*://thepiratebay.se/top/207",
         "*://thepiratebay.se/top/208"
       ]
+    },
+    {
+      "js": [
+        "inject.js"
+      ],
+      "matches": [
+        "*://*.thepiratebay.la/*",
+        "*://*.thepiratebay.vg/*",
+        "*://*.thepiratebay.mn/*",
+        "*://*.thepiratebay.gd/*",
+        "*://*.thepiratebay.se/*"
+      ]
     }
   ],
   "web_accessible_resources": [
