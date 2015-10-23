@@ -1,5 +1,7 @@
 'use strict';
 
+injectScript('double.js');
+
 function injectScript(path) {
   var script = document.createElement('script');
 

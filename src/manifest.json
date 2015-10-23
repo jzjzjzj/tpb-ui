@@ -132,6 +132,7 @@
     }
   ],
   "web_accessible_resources": [
+    "double.js",
     "table-template.html"
   ]
 }
