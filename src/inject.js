@@ -1,6 +1,7 @@
 'use strict';
 
 injectScript('double.js');
+injectScript('adblock/events.js');
 
 function injectScript(path) {
   var script = document.createElement('script');

@@ -1,0 +1,7 @@
+iframe, #sky-right, .ads {
+  display: none !important;
+}
+
+#content, #main-content {
+  margin: 0 auto !important;
+}
