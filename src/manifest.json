@@ -56,13 +56,6 @@
         "*://thepiratebay.vg/top/205",
         "*://thepiratebay.vg/top/207",
         "*://thepiratebay.vg/top/208",
-        "*://thepiratebay.am/top/all",
-        "*://thepiratebay.am/top/200",
-        "*://thepiratebay.am/top/48h200",
-        "*://thepiratebay.am/top/201",
-        "*://thepiratebay.am/top/205",
-        "*://thepiratebay.am/top/207",
-        "*://thepiratebay.am/top/208",
         "*://thepiratebay.mn/top/all",
         "*://thepiratebay.mn/top/200",
         "*://thepiratebay.mn/top/48h200",
@@ -108,13 +101,6 @@
         "*://thepiratebay.vg/top/205",
         "*://thepiratebay.vg/top/207",
         "*://thepiratebay.vg/top/208",
-        "*://thepiratebay.am/top/all",
-        "*://thepiratebay.am/top/200",
-        "*://thepiratebay.am/top/48h200",
-        "*://thepiratebay.am/top/201",
-        "*://thepiratebay.am/top/205",
-        "*://thepiratebay.am/top/207",
-        "*://thepiratebay.am/top/208",
         "*://thepiratebay.mn/top/all",
         "*://thepiratebay.mn/top/200",
         "*://thepiratebay.mn/top/48h200",
@@ -143,6 +129,9 @@
         "adblock/iframes.css",
         "adblock/anchors.css"
       ],
+      "js": [
+        "inject.js"
+      ],
       "matches": [
         "*://*.thepiratebay.la/*",
         "*://*.thepiratebay.vg/*",
@@ -153,6 +142,7 @@
     }
   ],
   "web_accessible_resources": [
+    "double.js",
     "table-template.html"
   ]
 }
