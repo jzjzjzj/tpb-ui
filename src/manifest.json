@@ -137,6 +137,19 @@
         "*://thepiratebay.se/top/207",
         "*://thepiratebay.se/top/208"
       ]
+    },
+    {
+      "css": [
+        "adblock/iframes.css",
+        "adblock/anchors.css"
+      ],
+      "matches": [
+        "*://*.thepiratebay.la/*",
+        "*://*.thepiratebay.vg/*",
+        "*://*.thepiratebay.mn/*",
+        "*://*.thepiratebay.gd/*",
+        "*://*.thepiratebay.se/*"
+      ]
     }
   ],
   "web_accessible_resources": [
