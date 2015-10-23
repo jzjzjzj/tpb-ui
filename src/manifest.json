@@ -15,15 +15,21 @@
     "*://thepiratebay.mn/*",
     "*://thepiratebay.gd/*",
     "*://thepiratebay.se/*",
+    "*://*.thepiratebay.org/ads/*",
+    "*://*.adbrau.com/*",
+    "*://*.exoclick.com/*",
+    "*://*.amldev.info/*",
+    "webRequest",
+    "webRequestBlocking",
     "cookies",
     "storage"
   ],
   "background": {
     "scripts": [
+      "adblock/urls.js",
       "background.js",
       "viewswitch/background.js"
-    ],
-    "persistent": false
+    ]
   },
   "manifest_version": 2,
   "content_scripts": [
