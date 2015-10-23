@@ -12,7 +12,7 @@
     "clean-chrome": "rm -rf dist-chrome",
     "clean": "npm run clean-chrome",
     "copy-chrome": "mkdir dist-chrome && cp -rf src/* dist-chrome",
-    "js-chrome": "browserify -r ./src/app.js:app | uglifyjs > dist-chrome/app.js",
+    "browserify-chrome": "browserify -r ./src/app.js:app | uglifyjs > dist-chrome/app.js",
     "bg-chrome": "uglifyjs src/background.js > dist-chrome/background.js",
     "opt-chrome": "uglifyjs src/options.js > dist-chrome/options.js",
     "vbg-chrome": "uglifyjs src/viewswitch/background.js > dist-chrome/viewswitch/background.js",
@@ -20,9 +20,9 @@
     "au-chrome": "uglifyjs src/adblock/urls.js > dist-chrome/adblock/urls.js",
     "inj-chrome": "uglifyjs src/inject.js > dist-chrome/inject.js",
     "dbl-chrome": "uglifyjs src/double.js > dist-chrome/double.js",
-    "browserify-chrome": "npm run js-chrome && npm run bg-chrome && npm run opt-chrome && npm run vbg-chrome && npm run vjs-chrome && npm run au-chrome && npm run inj-chrome && npm run dbl-chrome",
+    "uglify-chrome": "npm run bg-chrome && npm run opt-chrome && npm run vbg-chrome && npm run vjs-chrome && npm run au-chrome && npm run inj-chrome && npm run dbl-chrome",
     "rm-js-chrome": "rm dist-chrome/util.js dist-chrome/tpb-ui.js",
-    "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run browserify-chrome && npm run rm-js-chrome",
+    "build-chrome": "npm run clean-chrome && npm run copy-chrome && npm run browserify-chrome && npm run uglify-chrome && npm run rm-js-chrome",
     "build": "npm run build-chrome",
     "install": "npm run build"
   }
