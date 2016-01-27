@@ -2,7 +2,7 @@
   "name": "TPB UI - The Pirate Bay Special + AdBlock",
   "short_name": "TPB UI",
   "description": "Improved user interface of ThePirateBay (tpb). Includes an Ad block.",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "icons": {
     "16": "img/16.png",
     "48": "img/48.png",
