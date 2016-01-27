@@ -53,7 +53,7 @@ app.factory('torrents', function() {
   var cells = document.querySelectorAll('td');
   var torrent, parts, key;
 
-  for(var i = 0; i < cells.length; i += 7) {
+  for(var i = 0; i < cells.length; i += 8) {
     torrent = {
       type: cells[i].innerHTML,
       name: cells[i + 1].innerHTML,
