@@ -1,10 +1,7 @@
 'use strict';
 
 var domains = [
-  'la',
-  'vg',
-  'mn',
-  'gd',
+  'org',
   'se'
 ];
 
